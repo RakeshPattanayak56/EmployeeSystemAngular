@@ -1,0 +1,22 @@
+<h2>Add Email</h2>
+<form class="col s12 white" (ngSubmit)="OnSubmit(Email.value,Date.value)">
+    <label >Email</label>
+<br>
+<div class="row">
+    <div class="input-field col s12">
+      <input type="Email" #Email ngModel name="Email" placeholder="Email" required>
+    </div>
+  </div>
+<br>
+<label >Date</label>
+<br>
+<div class="row">
+    <div class="input-field col s12">
+      <input type="Date" #Date ngModel name="Date" placeholder="Date" required>
+    </div>
+  </div>
+<br>
+<button  class="btn-large btn-submit" class="btn btn-primary"type="AddNewData">Send</button>
+&scap;
+<button class="btn-large btn-submit" class="btn btn-primary" (click)="onclose()">close</button>
+</form>

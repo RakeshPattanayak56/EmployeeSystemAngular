@@ -1,0 +1,13 @@
+table, th, td {
+    border: 2px solid rgb(204, 65, 162);
+    border-collapse: collapse;
+    padding: 15px;
+    background-color: rgb(235, 237, 243);
+    text-align: center;
+  }
+  input[type=date] {
+    border: 1px solid  black;
+    border-radius: 2px;
+    width: 165px;
+    height: 20px;
+  }

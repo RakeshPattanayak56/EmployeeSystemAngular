@@ -1,0 +1,51 @@
+<br>
+<label >Search:</label>
+<input type="text"  [(ngModel)]="userName" (input)="Search()">
+<label >Date Search:</label>
+<input type="date" [(ngModel)]="loginTime" (change)="Filter()">
+<br>
+<br>
+<table class="table table-hover">
+    <thead>
+      <th>Id</th>
+      <th>User Id</th>
+      <th>User Name</th>
+      <th>Login Time</th>
+      <th>Logout Time</th>
+      <!-- <th>InDeskTimeIn</th>
+      <th>InDeskTimeOut</th> -->
+      <th>LastUpdateTime</th>
+      <th>LastUpdatedBy</th>
+      <th>Edit</th>
+      
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data ">
+        <td *ngIf="!item.visible">{{item.id}}</td>
+        <td *ngIf="!item.visible">{{item.userId}}</td>
+        <td *ngIf="!item.visible">{{item.userName}}</td>
+        <td *ngIf="!item.visible">{{item.loginTime  | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td *ngIf="!item.visible">{{item.logoutTime  | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <!-- <td *ngIf="!item.visible">{{item.inDeskTimeIn}}</td>
+        <td *ngIf="!item.visible">{{item.inDeskTimeOut}}</td> -->
+        <td *ngIf="!item.visible">{{item.lastUpdateTime  | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td *ngIf="!item.visible">{{item.lastUpdatedBy}}</td>
+        <td *ngIf="!item.visible" style="cursor: pointer;">
+          <button type="button" class="rowbutton" (click)="onEdit(item)">Edit</button>   
+      </td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.id" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.userId" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.userName" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.loginTime " id="field" type="date"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.logoutTime" id="field" type="date"></td>
+      <!-- <td *ngIf="item.visible"><input [(ngModel)]="item.inDeskTimeIn" id="field" type="date"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.inDeskTimeOut" id="field" type="date"></td> -->
+      <td *ngIf="item.visible"><input [(ngModel)]="item.lastUpdateTime" id="field" type="date"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.lastUpdatedBy" id="field"></td>
+      <td *ngIf="item.visible">
+        <button type="button" class="rowbutton" (click)="onRowSubmit(item)">submit</button>
+      </td>
+      </tr>
+    </tbody>
+</table>
+
